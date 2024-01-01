@@ -1,7 +1,12 @@
 import React from 'react'
-
-export const App = () => {
+import Form from './components/Form'
+import "./App.css"
+const App = () => {
   return (
-    <div>App</div>
+    <div className='main'>
+      <Form/>
+    </div>
   )
 }
+
+export default App
