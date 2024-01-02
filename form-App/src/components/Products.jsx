@@ -6,7 +6,7 @@ const Products = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/products/1");
+        const response = await fetch("https://dummyjson.com/products");
         const json = await response.json();
         setData(json);
       } catch (error) {
@@ -19,11 +19,13 @@ const Products = () => {
 
   return (
     <div>
-      {data ? (
-        <>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
-        </>
+      {data.length > 0 ? (
+        data.map((product) => (
+          <div key={product.id}>
+            <h1>{product.title}</h1>
+            <p>{product.description}</p>
+          </div>
+        ))
       ) : (
         <p>Loading...</p>
       )}
