@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [reload, setReload] = useState(true);
 
   useEffect(() => {
-    axios.get('https://randomuser.me/api/')
-      .then(response => {
+    axios
+      .get("https://randomuser.me/api/")
+      .then((response) => {
         setUserData(response.data.results[0]);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err);
         setLoading(false);
       });
-  }, []); // Empty dependency array ensures this runs only once on mount
-console.log(userData);
+  }, [reload]); 
+  console.log(userData);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -26,10 +28,16 @@ console.log(userData);
     <div>
       {userData ? (
         <div>
-          <img src={userData.picture.large} alt='no-picture'/>
-          <p>Name: {userData.name.first} {userData.name.last}</p>
+          <img src={userData.picture.large} alt="no-picture" />
+          <p>
+            Name: {userData.name.first} {userData.name.last}
+          </p>
           <p>Email: {userData.email}</p>
-          {/* Add more user details here as needed */}
+       
+          <br />
+          <button type="button" onClick={() => setReload(!reload)}>
+            Reload
+          </button>
         </div>
       ) : (
         <p>No user data available</p>
