@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
 
 const Home = () => {
   const [userData, setUserData] = useState(null);
@@ -28,17 +31,19 @@ const Home = () => {
     <div>
       {userData ? (
         <div>
-          <img src={userData.picture.large} alt="no-picture" />
-          <p>
-            Name: {userData.name.first} {userData.name.last}
-          </p>
-          <p>Email: {userData.email}</p>
+        <Card className="text-center py-5"  bg="info" text="white" >
+        <Card.Body>
+        <Image src={userData.picture.large} roundedCircle />
+          <Card.Title> Name: {userData.name.first} {userData.name.last}</Card.Title>
+          <Card.Text>
+  
+         Email: {userData.email}
        
-          <br />
-          <button type="button" onClick={() => setReload(!reload)}>
-            Reload
-          </button>
-        </div>
+          </Card.Text>
+          <Button variant="primary" onClick={() => setReload(!reload)}>Refresh</Button>
+        </Card.Body>
+      </Card>
+      </div>
       ) : (
         <p>No user data available</p>
       )}
