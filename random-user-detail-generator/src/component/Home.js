@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
 
 const Home = () => {
   const [userData, setUserData] = useState(null);
@@ -21,7 +21,7 @@ const Home = () => {
         setError(err);
         setLoading(false);
       });
-  }, [reload]); 
+  }, [reload]);
   console.log(userData);
 
   if (loading) return <p>Loading...</p>;
@@ -30,20 +30,34 @@ const Home = () => {
   return (
     <div>
       {userData ? (
-        <div>
-        <Card className="text-center py-5"  bg="info" text="white" >
-        <Card.Body>
-        <Image src={userData.picture.large} roundedCircle />
-          <Card.Title> Name: {userData.name.first} {userData.name.last}</Card.Title>
-          <Card.Text>
-  
-         Email: {userData.email}
-       
-          </Card.Text>
-          <Button variant="primary" onClick={() => setReload(!reload)}>Refresh</Button>
-        </Card.Body>
-      </Card>
-      </div>
+        <div className="container-fluid mt-5">
+          <Card>
+            <Card.Body className="text-center py-5">
+              <Image src={userData.picture.large} roundedCircle />
+              <Card.Title>
+                <h1>Random user detail</h1>
+              </Card.Title>
+              <Card.Text>
+                Name: {userData.name.first} {userData.name.last}
+                <br />
+                Email: {userData.email}
+                <br />
+                Phone: {userData.phone}
+                <br />
+                City: {userData.location.city}
+                <br />
+                state: {userData.location.state}
+                <br />
+                country: {userData.location.country}
+                <br />
+                postcode: {userData.location.postcode}
+              </Card.Text>
+              <Button variant="primary" onClick={() => setReload(!reload)}>
+                Refresh
+              </Button>
+            </Card.Body>
+          </Card>
+        </div>
       ) : (
         <p>No user data available</p>
       )}
