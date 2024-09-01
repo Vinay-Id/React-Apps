@@ -12,13 +12,13 @@ useEffect(()=>{
 
 return(
     <div>
-        <h2>employee list</h2>
-        <Link to='/create'>Create new employee</Link>
-        <ul>
+        <h2>User list</h2>
+        <Link to='/create'>Create new user</Link>
+        <>
             {
-              items.length>0 && items.map(item=><li key={item.id}>  {item.name} - <Link to={`/view/${item.id}`}>View</Link> - <Link to={`/edit/${item.id}`}>Edit</Link> </li>)
+              items.length>0 && items.map(item=><div className="mt-1 d-flex" key={item.id}><span> {item.name} </span> <span><Link to={`/view/${item.id}`}>View</Link> - <Link to={`/edit/${item.id}`}>Edit</Link> </span></div>)
             }
-        </ul>
+        </>
     </div>
 )
 }

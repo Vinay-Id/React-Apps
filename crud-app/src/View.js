@@ -17,7 +17,7 @@ function View() {
 
   return (
     <div>
-      <h2>user Details</h2>
+      <h2>User Details</h2>
       <p><strong>ID:</strong> {user.id}</p>
       <p><strong>Name:</strong> {user.name}</p>
     </div>
