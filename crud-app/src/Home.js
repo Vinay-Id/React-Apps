@@ -11,14 +11,17 @@ useEffect(()=>{
 },[])
 
 return(
-    <div>
+    <div className='bg-gradient screen-size d-flex-content'>
+        <div className='card custom-card'>
         <h2>User list</h2>
-        <Link to='/create'>Create new user</Link>
+       <div> <Link to='/create'>Create new user</Link></div>
+       <br/>
         <>
             {
-              items.length>0 && items.map(item=><div className="mt-1 d-flex" key={item.id}><span> {item.name} </span> <span><Link to={`/view/${item.id}`}>View</Link> - <Link to={`/edit/${item.id}`}>Edit</Link> </span></div>)
+              items.length>0 && items.map(item=><Link className="text-none" to={`/view/${item.id}`}><div className="mt-1 d-flex" key={item.id}><span> {item.name} </span> <span> <Link to={`/edit/${item.id}`}>Edit</Link> </span></div></Link>)
             }
         </>
+        </div>
     </div>
 )
 }

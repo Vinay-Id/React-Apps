@@ -17,15 +17,17 @@ function Edit() {
     console.log(user);
     
   return (
-    <div>
+    <div className='bg-gradient screen-size d-flex-content'>
+      <div  className='card'>
+        <h2>Edit user</h2>
+        <br/>
          <form onSubmit={handleSubmit}>
         <label>
-          Name:
-          <input type="text" value={user} onChange={(e)=>setUser(e.target.value)} />
+          Name: <input type="text" value={user} onChange={(e)=>setUser(e.target.value)} />
         </label>
         <button type="submit">Update</button>
       </form>
-
+      </div>
     </div>
   )
 }

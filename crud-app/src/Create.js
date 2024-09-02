@@ -11,16 +11,17 @@ const Create = () => {
     };
 
   return (
-    <div>
-        <h2>Create user</h2>
-
+    <div className='bg-gradient screen-size d-flex-content'>
+        <div className='card'>
+        <h2>Create new user</h2>
+        <br/>
         <form onSubmit={handleSubmit}>
             <label>
-                Name:<input type="text" value={user} onChange={(e)=>setUser(e.target.value)}/>
+                Name: <input type="text" value={user} onChange={(e)=>setUser(e.target.value)}/>
             </label>
             <button type="submit">submit</button>
         </form>
-
+        </div>
     </div>
   )
 }

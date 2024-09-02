@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,6 +20,34 @@ body {
   margin: 10px auto ;
 }
 .d-flex:hover{
-background-color: #37e1e142;
+/* background-color: #37e1e142; */
+background-color: #f15f7abe;
 cursor: pointer;
+}
+.text-none{
+  text-decoration: none;
+  color: black;
+}
+.bg-gradient{
+  background: #B24592; 
+  background: -webkit-linear-gradient(to right, #F15F79, #B24592); 
+  background: linear-gradient(to right, #F15F79, #B24592); 
+}
+.screen-size{
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.d-flex-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  padding:5% 10%;
+  background-color: white;
+  border-radius: 10px;
+}
+.custom-card{
+  padding:3% 0;
+  width: 80% ;
 }

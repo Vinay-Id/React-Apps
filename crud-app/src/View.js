@@ -16,12 +16,17 @@ function View() {
   if (!user) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className='bg-gradient screen-size d-flex-content'>
+      <div className='card'>
       <h2>User Details</h2>
-      <p><strong>ID:</strong> {user.id}</p>
+      <br/>
       <p><strong>Name:</strong> {user.name}</p>
+      <p><strong>Username:</strong> {user.username}</p>
+      <p><strong>Website:</strong> {user.website}</p>
+      </div>
     </div>
   );
 }
 
 export default View;
+
