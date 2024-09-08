@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Form";
 
 function Edit() {
@@ -30,11 +30,11 @@ function Edit() {
         <h2>Edit user</h2>
         <br />
         <form onSubmit={handleSubmit}>
-          {/* <label>
+          <label>
           Name: <input type="text" value={user} onChange={(e)=>setUser(e.target.value)} />
-        </label> */}
+        </label>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
@@ -42,7 +42,7 @@ function Edit() {
               value={user}
               onChange={(e) => setUser(e.target.value)}
             />
-          </Form.Group>
+          </Form.Group> */}
           {/* <Button as="input" type="submit" value="Submit">Primary</Button>{' '} */}
           <button type="submit">Update</button>
         </form>
