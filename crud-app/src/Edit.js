@@ -17,10 +17,16 @@ function Edit() {
   }, [id]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .put(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then(() => navigate("/"))
-      .catch((error) => console.error("error occured while editing", "error"));
+    if (user.length > 0) {
+      axios
+        .put(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(() => navigate("/"))
+        .catch((error) =>
+          console.error("error occured while editing", "error")
+        );
+    } else {
+      alert("please enter name");
+    }
   };
   console.log(user);
 
@@ -31,8 +37,13 @@ function Edit() {
         <br />
         <form onSubmit={handleSubmit}>
           <label>
-          Name: <input type="text" value={user} onChange={(e)=>setUser(e.target.value)} />
-        </label>
+            Name:{" "}
+            <input
+              type="text"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+            />
+          </label>
 
           {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Name</Form.Label>
@@ -44,7 +55,10 @@ function Edit() {
             />
           </Form.Group> */}
           {/* <Button as="input" type="submit" value="Submit">Primary</Button>{' '} */}
-          <button type="submit">Update</button>
+          <br />
+          <button type="submit" className="button-24">
+            Update
+          </button>
         </form>
       </div>
     </div>

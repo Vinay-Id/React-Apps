@@ -14,7 +14,7 @@ return(
     <div className='bg-gradient screen-size d-flex-content'>
         <div className='card custom-card'>
         <h2>User list</h2>
-       <div> <Link to='/create'  class="button-24">Create new user</Link></div>
+       <div> <Link to='/create' className="button-24">Create new user</Link></div>
        <br/>
         <>
             {

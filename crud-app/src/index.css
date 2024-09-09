@@ -90,3 +90,31 @@ cursor: pointer;
 .button-24:active {
   opacity: .5;
 }
+
+
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+
+th {
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}

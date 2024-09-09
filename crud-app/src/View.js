@@ -20,9 +20,31 @@ function View() {
       <div className='card'>
       <h2>User Details</h2>
       <br/>
-      <p><strong>Name:</strong> {user.name}</p>
+      {/* <p><strong>Name:</strong> {user.name}</p>
       <p><strong>Username:</strong> {user.username}</p>
-      <p><strong>Website:</strong> {user.website}</p>
+      <p><strong>Website:</strong> {user.website}</p> */}
+        <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.username}</td>
+              <td>{user.email}</td>
+              <td>{user.website}</td>
+            </tr>
+         
+        </tbody>
+      </table>
       </div>
     </div>
   );
