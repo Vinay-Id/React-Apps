@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Create = () => {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
@@ -10,10 +12,15 @@ const Create = () => {
     if (user.length > 0) {
       axios
         .post("https://jsonplaceholder.typicode.com/users", { user })
-        .then(() => navigate("/"))
+        .then(() => {
+          toast.success("Updated successfull");
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        })
         .catch((error) => console.error("Error creating item:", error));
     } else {
-      alert("please enter name");
+      toast.error("please enter name");
     }
   };
 
@@ -37,6 +44,8 @@ const Create = () => {
           </button>
         </form>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };

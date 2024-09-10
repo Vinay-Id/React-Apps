@@ -3,12 +3,13 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Edit() {
   const { id } = useParams();
   const [user, setUser] = useState("");
   const navigate = useNavigate();
-
   useEffect(() => {
     axios
       .get(`https://jsonplaceholder.typicode.com/users/${id}`)
@@ -20,12 +21,18 @@ function Edit() {
     if (user.length > 0) {
       axios
         .put(`https://jsonplaceholder.typicode.com/users/${id}`)
-        .then(() => navigate("/"))
+        .then(() => {
+          toast.success("Updated successfull");
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        })
         .catch((error) =>
           console.error("error occured while editing", "error")
         );
     } else {
-      alert("please enter name");
+      toast.error("please enter name");
+      // alert("please enter name");
     }
   };
   console.log(user);
@@ -61,6 +68,7 @@ function Edit() {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 }

@@ -1,68 +1,67 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
   justify-content: space-between;
-  border:2px solid #ededed;
+  border: 2px solid #ededed;
   width: 80%;
   padding: 10px;
   border-radius: 4px;
 }
-.mt-1{
-  margin: 10px auto ;
+.mt-1 {
+  margin: 10px auto;
 }
-.d-flex:hover{
-/* background-color: #37e1e142; */
-background-color: #f15f7abe;
-cursor: pointer;
+.d-flex:hover {
+  /* background-color: #37e1e142; */
+  background-color: #f15f7abe;
+  cursor: pointer;
 }
-.text-none{
+.text-none {
   text-decoration: none;
   color: black;
 }
-.bg-gradient{
-  background: #B24592; 
-  background: -webkit-linear-gradient(to right, #F15F79, #B24592); 
-  background: linear-gradient(to right, #F15F79, #B24592); 
+.bg-gradient {
+  background: #b24592;
+  background: -webkit-linear-gradient(to right, #f15f79, #b24592);
+  background: linear-gradient(to right, #f15f79, #b24592);
 }
-.screen-size{
+.screen-size {
   min-height: 100vh;
   min-width: 100vw;
 }
-.d-flex-content{
+.d-flex-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.card{
-  padding:5% 10%;
+.card {
+  padding: 5% 10%;
   background-color: white;
   border-radius: 10px;
 }
-.custom-card{
-  padding:3% 0;
-  width: 80% ;
+.custom-card {
+  padding: 3% 0;
+  width: 80%;
 }
 
-
 .button-24 {
-  background: #FF4742;
-  border: 1px solid #FF4742;
+  background: #ff4742;
+  border: 1px solid #ff4742;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 16px;
@@ -84,16 +83,12 @@ cursor: pointer;
 .button-24:active {
   background-color: initial;
   background-position: 0 0;
-  color: #FF4742;
+  color: #ff4742;
 }
 
 .button-24:active {
-  opacity: .5;
+  opacity: 0.5;
 }
-
-
-
-
 
 table {
   width: 100%;
@@ -104,7 +99,6 @@ table {
 thead {
   background-color: #f4f4f4;
 }
-
 
 th {
   padding: 12px;
