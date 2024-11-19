@@ -1,20 +1,34 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 const Form = () => {
   const [input, setInput] = useState({});
+
+  useEffect(() => {
+    const localData = localStorage.getItem("data");
+    console.log("************", localData);
+    if (localData) {
+      setInput(JSON.parse(localData)); // Parse string to object
+    }
+  }, []);
+
   function handleChange(event) {
-    const name=event.target.name
-    const value=event.target.value
-    setInput(values=>({...values,[name]:value}))
+    const name = event.target.name;
+    const value = event.target.value;
+    setInput((values) => ({ ...values, [name]: value }));
   }
+
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('===========>',input);
-    
+    console.log("===========>", input);
+    localStorage.setItem("data", JSON.stringify(input)); // Save to localStorage as string
   }
+
   return (
     <div className="container-fluid py-5">
-      <form onSubmit={handleSubmit} className="d-flex justify-content-center align-items-center">
+      <form
+        onSubmit={handleSubmit}
+        className="d-flex justify-content-center align-items-center"
+      >
         <label>
           Enter your name:
           <input
@@ -32,9 +46,9 @@ const Form = () => {
             name="age"
             value={input.age || ""}
             onChange={handleChange}
-          ></input>
+          />
         </label>
-    {/* <button type="submit">submit</button> */}
+
         <input type="submit" />
       </form>
     </div>
@@ -42,14 +56,6 @@ const Form = () => {
 };
 
 export default Form;
-
-
-
-
-
-
-
-
 
 
 // import React, { useState } from "react";
