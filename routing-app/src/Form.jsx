@@ -5,9 +5,9 @@ const Form = () => {
 
   useEffect(() => {
     const localData = localStorage.getItem("data");
-    console.log("************", localData);
+    // console.log("************", localData);
     if (localData) {
-      setInput(JSON.parse(localData)); // Parse string to object
+      setInput(JSON.parse(localData));
     }
   }, []);
 
@@ -19,13 +19,13 @@ const Form = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("===========>", input);
-    localStorage.setItem("data", JSON.stringify(input)); // Save to localStorage as string
+    // console.log("===========>", input);
+    localStorage.setItem("data", JSON.stringify(input));
   }
 
   return (
     <div className="container-fluid py-5">
-      <form
+      {/* <form
         onSubmit={handleSubmit}
         className="d-flex justify-content-center align-items-center"
       >
@@ -50,13 +50,51 @@ const Form = () => {
         </label>
 
         <input type="submit" />
+      </form> */}
+      <form
+        onSubmit={handleSubmit}
+      >
+        <div className="mb-3 row">
+          <label htmlFor="staticEmail" className="col-sm-2 col-form-label">
+            Email
+          </label>
+          <div className="col-sm-10">
+            <input
+              type="text"
+              name="username"
+              value={input.username || ""}
+              onChange={handleChange}
+              className="form-control"
+              id="staticEmail"
+            />
+          </div>
+        </div>
+        <div className="mb-3 row">
+          <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+            Password
+          </label>
+          <div className="col-sm-10">
+            <input
+              type="number"
+              name="age"
+              value={input.age || ""}
+              onChange={handleChange}
+              className="form-control"
+              id="inputPassword"
+            />
+          </div>
+        </div>
+        <div className="mb-3 row">
+          <button type="submit" className="btn btn-primary mb-3">
+            submit
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
 export default Form;
-
 
 // import React, { useState } from "react";
 // import axios from "axios";
