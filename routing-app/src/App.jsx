@@ -1,6 +1,8 @@
 import "./App.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from "./Home";
 import Contact from "./Contact";
 import About from "./About";
@@ -9,7 +11,7 @@ function App() {
   return (
     <div className="container">
       <BrowserRouter>
-        <div>
+        {/* <div>
           <nav>
             <ul>
               <li>
@@ -26,14 +28,39 @@ function App() {
               </li>
             </ul>
           </nav>
-        </div>
+        </div> */}
+
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <Link class="nav-link active" aria-current="page" to="/">
+              Home
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link to="/contact" class="nav-link active">
+              Contact
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link to="/about" class="nav-link active">
+              About
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link to="/form" class="nav-link active">
+              Form
+            </Link>
+          </li>
+        </ul>
+
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/about" element={<About />}></Route>
-          <Route path="/form" element={<Form/>}></Route>
+          <Route path="/form" element={<Form />}></Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 }

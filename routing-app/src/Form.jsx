@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import { toast } from "react-toastify";
 const Form = () => {
   const [input, setInput] = useState({});
 
@@ -21,6 +22,7 @@ const Form = () => {
     event.preventDefault();
     // console.log("===========>", input);
     localStorage.setItem("data", JSON.stringify(input));
+    toast.success("Success!.");
   }
 
   return (
@@ -51,9 +53,7 @@ const Form = () => {
 
         <input type="submit" />
       </form> */}
-      <form
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <div className="mb-3 row">
           <label htmlFor="staticEmail" className="col-sm-2 col-form-label">
             Email
