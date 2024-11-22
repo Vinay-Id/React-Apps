@@ -30,24 +30,24 @@ function App() {
           </nav>
         </div> */}
 
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <Link class="nav-link active" aria-current="page" to="/">
+        <ul className="nav nav-tabs">
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/">
               Home
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/contact" class="nav-link active">
+          <li className="nav-item">
+            <Link to="/contact" className="nav-link active">
               Contact
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/about" class="nav-link active">
+          <li className="nav-item">
+            <Link to="/about" className="nav-link active">
               About
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/form" class="nav-link active">
+          <li className="nav-item">
+            <Link to="/form" className="nav-link active">
               Form
             </Link>
           </li>
