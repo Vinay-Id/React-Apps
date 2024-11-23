@@ -70,3 +70,6 @@ p {
   color: #555;
   font-size: 16px;
 }
+.carousel-item img{
+  height: 80vh;
+}
