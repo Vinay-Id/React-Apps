@@ -1,10 +1,21 @@
 import React from "react";
+const imgArr = [
+  {
+    img: "https://plus.unsplash.com/premium_photo-1675198764382-94d5c093df30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RpbGxuZXNzfGVufDB8fDB8fHww",
+  },
+  {
+    img: "https://plus.unsplash.com/premium_photo-1667126444822-94fb21279436?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmVhdHVyZWR8ZW58MHx8MHx8fDA%3D",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1461696114087-397271a7aedc?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxDOFNKOE16ak1mZ3x8ZW58MHx8fHx8",
+  },
+];
 
 const Home = () => {
   return (
     <div>
       <div id="carouselExample" className="carousel slide">
-        <div className="carousel-inner">
+        {/* <div className="carousel-inner">
           <div className="carousel-item active">
             <img
               src="https://plus.unsplash.com/premium_photo-1675198764382-94d5c093df30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RpbGxuZXNzfGVufDB8fDB8fHww"
@@ -26,7 +37,20 @@ const Home = () => {
               alt="img3"
             />
           </div>
+        </div> */}
+
+        <div className="carousel-inner">
+          {imgArr.map((ele, idx) => {
+            return (
+              <div
+                className={idx === 0 ? "carousel-item active" : "carousel-item"}
+              >
+                <img src={ele.img} className="d-block w-100" alt={idx} />
+              </div>
+            );
+          })}
         </div>
+
         <button
           className="carousel-control-prev"
           type="button"

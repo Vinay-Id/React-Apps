@@ -53,7 +53,7 @@ const Form = () => {
 
         <input type="submit" />
       </form> */}
-      <form onSubmit={handleSubmit}>
+      <form className="container p-5" onSubmit={handleSubmit}>
         <div className="mb-3 row">
           <label htmlFor="staticEmail" className="col-sm-2 col-form-label">
             Email
